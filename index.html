@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autoškola Zdeněk Kunst – Nýřany | Řidičák skupiny B, C, CE</title>
-  <meta name="description" content="Autoškola Zdeněk Kunst, Nýřany. Získejte řidičské oprávnění skupiny B, C nebo CE. Zkušený instruktor, individuální přístup, moderní vozy." />
+  <title>Autoškola Zdeněk Kunst – Nýřany | B, C, CE, motocykly, profesní průkazy</title>
+  <meta name="description" content="Autoškola Zdeněk Kunst, Nýřany. Řidičské oprávnění skupin AM, A1, A2, A, B, BE, C, CE, D. Profesní průkazy. Zkušený instruktor, individuální přístup, moderní vozy. Tel: +420 602 943 355" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,10 +56,8 @@
   </script>
 
   <style>
-    /* ── Scroll behaviour ───────────────────────────────────── */
     html { scroll-behavior: smooth; }
 
-    /* ── Animate-on-scroll setup ────────────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -69,33 +67,27 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
-    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-1 { transition-delay: 0.07s; }
+    .reveal-delay-2 { transition-delay: 0.14s; }
+    .reveal-delay-3 { transition-delay: 0.21s; }
+    .reveal-delay-4 { transition-delay: 0.28s; }
 
-    /* ── Header scroll glass effect ─────────────────────────── */
-    #site-header {
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
+    #site-header { transition: background 0.3s ease, box-shadow 0.3s ease; }
     #site-header.scrolled {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.93);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 1px 0 rgba(0,0,0,0.08);
     }
 
-    /* ── Hero gradient overlay ──────────────────────────────── */
     .hero-bg {
       background:
         linear-gradient(135deg, rgba(0,30,80,0.82) 0%, rgba(0,15,45,0.65) 60%, rgba(232,93,4,0.18) 100%),
         url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
     }
 
-    /* ── Section zebra ──────────────────────────────────────── */
     .section-alt { background: #f8faff; }
 
-    /* ── Badge pill ─────────────────────────────────────────── */
     .badge {
       display: inline-flex;
       align-items: center;
@@ -110,12 +102,24 @@
       backdrop-filter: blur(6px);
     }
 
-    /* ── Pricing card highlight ─────────────────────────────── */
-    .card-highlight {
+    /* Category label above pricing rows */
+    .price-category-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7280;
+      padding: 0 4px 8px;
+      border-bottom: 2px solid #e5e7eb;
+      margin-bottom: 16px;
+    }
+
+    /* Highlighted pricing card */
+    .price-card-featured {
       border: 2px solid #0052cc;
       position: relative;
     }
-    .card-highlight::before {
+    .price-card-featured::before {
       content: 'Nejoblíbenější';
       position: absolute;
       top: -13px;
@@ -123,7 +127,7 @@
       transform: translateX(-50%);
       background: #0052cc;
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -132,7 +136,6 @@
       white-space: nowrap;
     }
 
-    /* ── Step connector line ────────────────────────────────── */
     @media (min-width: 768px) {
       .step-connector { position: relative; }
       .step-connector:not(:last-child)::after {
@@ -146,20 +149,39 @@
       }
     }
 
-    /* ── Form focus ring ────────────────────────────────────── */
     input:focus, textarea:focus, select:focus {
       outline: none;
       border-color: #0052cc;
       box-shadow: 0 0 0 3px rgba(0,82,204,0.15);
     }
 
-    /* ── Mobile CTA bar ─────────────────────────────────────── */
-    #mobile-cta {
-      display: none;
-    }
+    #mobile-cta { display: none; }
     @media (max-width: 767px) {
       #mobile-cta { display: flex; }
       body { padding-bottom: 72px; }
+    }
+
+    /* Fleet photo placeholder */
+    .fleet-photo {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      font-weight: 500;
+      gap: 8px;
+    }
+
+    /* Google Maps iframe */
+    .map-iframe {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
     }
   </style>
 </head>
@@ -170,31 +192,27 @@
      STICKY HEADER
 ═══════════════════════════════════════════ -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-white/0">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-18">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-2 no-underline">
+    <a href="#" class="flex items-center gap-2">
       <span class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-sm select-none">K</span>
       <span class="font-bold text-gray-900 text-lg leading-tight">
-        Autoškola<br class="hidden sm:block" /><span class="text-primary-600">Kunst</span>
+        Autoškola <span class="text-primary-600">Kunst</span>
       </span>
     </a>
 
-    <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
       <a href="#jak-to-funguje" class="hover:text-primary-600 transition-colors">Jak to funguje</a>
-      <a href="#sluzby"         class="hover:text-primary-600 transition-colors">Ceny</a>
-      <a href="#proc-my"        class="hover:text-primary-600 transition-colors">Proč my</a>
+      <a href="#sluzby"         class="hover:text-primary-600 transition-colors">Ceník</a>
+      <a href="#vozovy-park"    class="hover:text-primary-600 transition-colors">Vozový park</a>
       <a href="#kontakt"        class="hover:text-primary-600 transition-colors">Kontakt</a>
     </nav>
 
-    <!-- Header CTA -->
-    <a href="#kontakt"
+    <a href="tel:+420602943355"
        class="hidden md:inline-flex items-center gap-2 bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition-colors shadow-sm">
-      Kontaktovat
+      📞 +420 602 943 355
     </a>
 
-    <!-- Mobile hamburger -->
     <button id="menu-btn" aria-label="Otevřít menu"
             class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
       <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -202,14 +220,13 @@
     </button>
   </div>
 
-  <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-3 text-sm font-medium text-gray-700 shadow-lg">
     <a href="#jak-to-funguje" class="py-2 hover:text-primary-600">Jak to funguje</a>
-    <a href="#sluzby"         class="py-2 hover:text-primary-600">Ceny</a>
-    <a href="#proc-my"        class="py-2 hover:text-primary-600">Proč my</a>
+    <a href="#sluzby"         class="py-2 hover:text-primary-600">Ceník</a>
+    <a href="#vozovy-park"    class="py-2 hover:text-primary-600">Vozový park</a>
     <a href="#kontakt"        class="py-2 hover:text-primary-600">Kontakt</a>
-    <a href="#kontakt" class="mt-2 bg-accent text-white text-center font-semibold px-4 py-3 rounded-lg hover:bg-accent-dark transition-colors">
-      Kontaktovat nás
+    <a href="tel:+420602943355" class="mt-2 bg-accent text-white text-center font-semibold px-4 py-3 rounded-lg hover:bg-accent-dark transition-colors">
+      📞 +420 602 943 355
     </a>
   </div>
 </header>
@@ -222,21 +239,17 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-24 md:py-32 w-full">
     <div class="max-w-2xl animate-fadeIn">
 
-      <!-- Eyebrow -->
       <p class="text-accent-light font-semibold text-sm tracking-widest uppercase mb-4">Autoškola Zdeněk Kunst · Nýřany</p>
 
-      <!-- H1 -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-5">
         Řidičák napoprvé.<br />
         <span class="text-accent-light">Nebo jedeme znova zdarma.</span>
       </h1>
 
-      <!-- Subheadline -->
       <p class="text-white/80 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-        Klidné jízdy s trpělivým instruktorem, jasné ceny a termíny, které sedí vašemu životu. Nyřany a okolí.
+        Klidné jízdy s trpělivým instruktorem, jasné ceny a termíny, které sedí vašemu životu. Nýřany a okolí.
       </p>
 
-      <!-- CTAs -->
       <div class="flex flex-wrap gap-3 mb-10">
         <a href="#sluzby"
            class="inline-flex items-center gap-2 bg-accent text-white font-bold px-7 py-4 rounded-xl text-base hover:bg-accent-dark transition-colors shadow-lg">
@@ -248,7 +261,6 @@
         </a>
       </div>
 
-      <!-- Trust badges -->
       <div class="flex flex-wrap gap-3">
         <span class="badge">✓ Funguje od roku 1995</span>
         <span class="badge">📍 Nýřany + okolí</span>
@@ -271,35 +283,26 @@
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Pain 1 -->
       <div class="reveal reveal-delay-1 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
         <div class="text-4xl mb-4">😰</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Strach ze zkoušky</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Nevíte, co vás čeká? Připravíme vás krok za krokem — bez zbytečného tlaku a stresu.</p>
       </div>
-
-      <!-- Pain 2 -->
       <div class="reveal reveal-delay-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
         <div class="text-4xl mb-4">💸</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Nejasné ceny</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Skryté poplatky a přirážky na konci kurzu? U nás víte dopředu přesně, co zaplatíte.</p>
       </div>
-
-      <!-- Pain 3 -->
       <div class="reveal reveal-delay-3 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
         <div class="text-4xl mb-4">😤</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Podrážděný instruktor</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Instruktor, který na vás křičí při každé chybě? S námi zažijete jen klidné jízdy a věcné rady.</p>
       </div>
-
-      <!-- Pain 4 -->
       <div class="reveal reveal-delay-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
         <div class="text-4xl mb-4">📅</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Čekáte měsíce</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Přihlásíte se a čekáte půl roku na první jízdu? Naše termíny jsou dostupné do dvou týdnů.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -318,125 +321,205 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 relative">
-
-      <!-- Step 1 -->
       <div class="reveal reveal-delay-1 step-connector text-center">
         <div class="w-16 h-16 bg-primary-600 text-white text-2xl font-extrabold rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-200">1</div>
         <h3 class="font-bold text-gray-900 text-xl mb-3">Přihlásíte se</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Zavolejte nebo napište přes formulář níže. Domluvíme termín úvodní schůzky a zodpovíme všechny otázky.</p>
       </div>
-
-      <!-- Step 2 -->
       <div class="reveal reveal-delay-2 step-connector text-center">
         <div class="w-16 h-16 bg-primary-600 text-white text-2xl font-extrabold rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-200">2</div>
         <h3 class="font-bold text-gray-900 text-xl mb-3">Teorie + jízdy</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Absolvujete teorii a praktické jízdy ve svém tempu — termíny přizpůsobíme vaší práci i rodině.</p>
       </div>
-
-      <!-- Step 3 -->
       <div class="reveal reveal-delay-3 step-connector text-center">
         <div class="w-16 h-16 bg-accent text-white text-2xl font-extrabold rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-orange-200">3</div>
         <h3 class="font-bold text-gray-900 text-xl mb-3">Složíte zkoušky</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Složíte závěrečné zkoušky a jedete domů s řidičákem v kapse. A pokud ne napoprvé — jedeme znova zdarma.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════
-     SERVICES / PRICING
+     PRICING — full ceník (updated 14.01.2026)
 ═══════════════════════════════════════════ -->
 <section id="sluzby" class="py-20 md:py-28 section-alt">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-14 reveal">
       <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-2">Transparentní ceny</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Kurzy a ceník</h2>
-      <p class="text-gray-500 mt-3 max-w-lg mx-auto">Cena zahrnuje vše — bez skrytých poplatků. Co vidíte, to zaplatíte.</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Ceník kurzů</h2>
+      <p class="text-gray-500 mt-3 max-w-lg mx-auto">Cena zahrnuje vše — bez skrytých poplatků. Aktualizováno 14. 1. 2026.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 items-start">
+    <!-- ── MOTOCYKLY ── -->
+    <div class="mb-10">
+      <div class="price-category-label reveal">🏍️ Motocykly</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-      <!-- Card B -->
-      <div class="reveal reveal-delay-1 card-highlight bg-white rounded-2xl p-8 shadow-md">
-        <div class="inline-block bg-primary-50 text-primary-600 font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-4">Skupina B</div>
-        <h3 class="text-2xl font-extrabold text-gray-900 mb-1">Osobní automobil</h3>
-        <p class="text-gray-500 text-sm mb-6">Nejrozšířenější kategorie — řidičák na osobní auto.</p>
-
-        <div class="flex items-baseline gap-1 mb-6">
-          <span class="text-4xl font-extrabold text-primary-600">od&nbsp;22 000</span>
-          <span class="text-gray-500 font-medium">Kč</span>
+        <!-- AM -->
+        <div class="reveal reveal-delay-1 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">AM</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Moped</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Moped a lehký motocykl do 50 ccm, max 45 km/h.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">10 500 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu AM →</a>
         </div>
 
-        <ul class="space-y-3 mb-8 text-sm text-gray-600">
-          <li class="flex items-start gap-2"><span class="text-primary-600 font-bold mt-0.5">✓</span> 28 hodin teoretické výuky</li>
-          <li class="flex items-start gap-2"><span class="text-primary-600 font-bold mt-0.5">✓</span> Minimálně 26 jízd (á 45 min)</li>
-          <li class="flex items-start gap-2"><span class="text-primary-600 font-bold mt-0.5">✓</span> Dopravní výchova a první pomoc</li>
-          <li class="flex items-start gap-2"><span class="text-primary-600 font-bold mt-0.5">✓</span> Poplatky za zkoušky v ceně</li>
-          <li class="flex items-start gap-2"><span class="text-primary-600 font-bold mt-0.5">✓</span> Opakovaná zkouška zdarma</li>
-        </ul>
-
-        <a href="#kontakt"
-           class="block w-full text-center bg-primary-600 text-white font-bold py-3.5 rounded-xl hover:bg-primary-700 transition-colors">
-          Chci skupinu B →
-        </a>
-      </div>
-
-      <!-- Card C -->
-      <div class="reveal reveal-delay-2 bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="inline-block bg-orange-50 text-accent font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-4">Skupina C</div>
-        <h3 class="text-2xl font-extrabold text-gray-900 mb-1">Nákladní automobil</h3>
-        <p class="text-gray-500 text-sm mb-6">Pro řízení nákladních vozidel nad 3,5 tuny.</p>
-
-        <div class="flex items-baseline gap-1 mb-6">
-          <span class="text-4xl font-extrabold text-gray-900">od&nbsp;26 000</span>
-          <span class="text-gray-500 font-medium">Kč</span>
+        <!-- A1 -->
+        <div class="reveal reveal-delay-2 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">A1</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Motocykl A1</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Motocykl do 125 ccm, max 11 kW. Od 16 let.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">10 500 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu A1 →</a>
         </div>
 
-        <ul class="space-y-3 mb-8 text-sm text-gray-600">
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Teorie i praxe v ceně</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Zkušební jízdy s nákladním vozem</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Příprava na profesní průkaz</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Poplatky za zkoušky v ceně</li>
-        </ul>
-
-        <a href="#kontakt"
-           class="block w-full text-center bg-gray-900 text-white font-bold py-3.5 rounded-xl hover:bg-gray-800 transition-colors">
-          Chci skupinu C →
-        </a>
-      </div>
-
-      <!-- Card CE -->
-      <div class="reveal reveal-delay-3 bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-        <div class="inline-block bg-orange-50 text-accent font-bold text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-4">Skupina CE</div>
-        <h3 class="text-2xl font-extrabold text-gray-900 mb-1">Souprava s přívěsem</h3>
-        <p class="text-gray-500 text-sm mb-6">Kamion s přívěsem — nutný platný řidičák sk. C.</p>
-
-        <div class="flex items-baseline gap-1 mb-6">
-          <span class="text-4xl font-extrabold text-gray-900">od&nbsp;18 000</span>
-          <span class="text-gray-500 font-medium">Kč</span>
+        <!-- A2 -->
+        <div class="reveal reveal-delay-3 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">A2</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Motocykl A2</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Motocykl do 35 kW, max 0,2 kW/kg. Od 18 let.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">15 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu A2 →</a>
         </div>
 
-        <ul class="space-y-3 mb-8 text-sm text-gray-600">
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Rozšíření na skupinu CE</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Praktické jízdy se soupravou</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Předpoklad: platný řidičák C</li>
-          <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Poplatky za zkoušky v ceně</li>
-        </ul>
+        <!-- A -->
+        <div class="reveal reveal-delay-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">A</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Motocykl A</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Motocykl bez omezení výkonu. Od 24 let (nebo 2 roky A2).</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">15 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu A →</a>
+        </div>
 
-        <a href="#kontakt"
-           class="block w-full text-center bg-gray-900 text-white font-bold py-3.5 rounded-xl hover:bg-gray-800 transition-colors">
-          Chci skupinu CE →
-        </a>
       </div>
-
     </div>
 
-    <!-- Disclaimer -->
-    <p class="text-center text-gray-400 text-xs mt-8 reveal">
-      * Přesná cena závisí na počtu jízd a aktuálním ceníku. Kontaktujte nás pro nezávaznou nabídku.
+    <!-- ── OSOBNÍ VOZIDLA ── -->
+    <div class="mb-10">
+      <div class="price-category-label reveal">🚗 Osobní vozidla</div>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-2xl">
+
+        <!-- B — highlighted -->
+        <div class="reveal reveal-delay-1 price-card-featured bg-white rounded-xl p-5 shadow-md flex flex-col mt-3">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">B</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Osobní automobil</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Nejrozšířenější skupina — řidičák na osobní auto. Od 18 let.</p>
+          <div class="text-xl font-extrabold text-primary-600 mb-3">20 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu B →</a>
+        </div>
+
+        <!-- BE -->
+        <div class="reveal reveal-delay-2 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">BE</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Auto s přívěsem</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Osobní auto s přívěsem nad 750 kg. Nutný platný řidičák B.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">5 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu BE →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── NÁKLADNÍ ── -->
+    <div class="mb-10">
+      <div class="price-category-label reveal">🚛 Nákladní vozidla</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- C -->
+        <div class="reveal reveal-delay-1 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">C</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Nákladní automobil</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Nákladní vozidlo nad 3,5 t. Vlastní IVECO pro výuku.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">20 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu C →</a>
+        </div>
+
+        <!-- CE -->
+        <div class="reveal reveal-delay-2 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">CE</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Souprava s návěsem</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Nákladní souprava s přívěsem. Předpoklad: platný řidičák C.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">10 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Chci skupinu CE →</a>
+        </div>
+
+        <!-- D — smluvní -->
+        <div class="reveal reveal-delay-3 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-4xl font-extrabold text-primary-600">D</span>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Autobus</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Vozidlo pro přepravu více než 8 cestujících. Cena dle rozsahu.</p>
+          <div class="text-xl font-semibold text-gray-400 italic mb-3">Smluvní cena</div>
+          <a href="#kontakt" class="block text-center bg-gray-800 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-gray-900 transition-colors">Nezávazná poptávka →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PROFESNÍ PRŮKAZY ── -->
+    <div class="mb-6">
+      <div class="price-category-label reveal">📋 Profesní průkazy</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Vstupní školení -->
+        <div class="reveal reveal-delay-1 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="text-3xl mb-3">🎓</div>
+          <h3 class="font-bold text-gray-900 mb-1">Vstupní školení</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Základní profesní způsobilost pro řidiče z povolání (sk. C, CE, D).</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">15 000 Kč</div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Mám zájem →</a>
+        </div>
+
+        <!-- Pravidelné školení -->
+        <div class="reveal reveal-delay-2 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="text-3xl mb-3">🔄</div>
+          <h3 class="font-bold text-gray-900 mb-1">Pravidelné školení</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Periodické školení profesní způsobilosti každých 5 let.</p>
+          <div class="text-xl font-extrabold text-gray-900 mb-3">900 Kč <span class="text-sm font-normal text-gray-400">/ os.</span></div>
+          <a href="#kontakt" class="block text-center bg-primary-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-primary-700 transition-colors">Mám zájem →</a>
+        </div>
+
+        <!-- Školení ref. vozidel — smluvní -->
+        <div class="reveal reveal-delay-3 bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col">
+          <div class="text-3xl mb-3">🚌</div>
+          <h3 class="font-bold text-gray-900 mb-1">Školení ref. vozidel</h3>
+          <p class="text-gray-400 text-xs leading-relaxed mb-4 flex-1">Referentské školení — pro zaměstnavatele i jednotlivce. Cena dle rozsahu.</p>
+          <div class="text-xl font-semibold text-gray-400 italic mb-3">Smluvní cena</div>
+          <a href="#kontakt" class="block text-center bg-gray-800 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-gray-900 transition-colors">Nezávazná poptávka →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Rozšíření note -->
+    <div class="reveal mt-6 bg-white border border-gray-200 rounded-xl p-5 text-sm text-gray-500">
+      <span class="font-semibold text-gray-700">Rozšíření skupin:</span>
+      A1 → A2 a A2 → A jsou za smluvní cenu.
+      <a href="#kontakt" class="text-primary-600 font-semibold hover:underline ml-1">Zeptejte se nás →</a>
+    </div>
+
+    <p class="text-center text-gray-400 text-xs mt-6 reveal">
+      * Ceník platný od 14. 1. 2026. Cena zahrnuje výuku, jízdy i správní poplatky za zkoušky. Kontaktujte nás pro přesnou kalkulaci.
     </p>
   </div>
 </section>
@@ -454,29 +537,93 @@
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
       <div class="reveal reveal-delay-1 bg-primary-50 rounded-2xl p-6 border border-primary-100">
         <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center text-2xl mb-4">🏆</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">30+ let praxe</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Zdeněk Kunst vyučuje od roku 1995. Stovky úspěšných žáků mluví za vše.</p>
       </div>
-
       <div class="reveal reveal-delay-2 bg-primary-50 rounded-2xl p-6 border border-primary-100">
         <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center text-2xl mb-4">🕐</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Flexibilní termíny</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Jízdy i v podvečer a o víkendech. Přizpůsobíme se vaší práci i rodině.</p>
       </div>
-
       <div class="reveal reveal-delay-3 bg-primary-50 rounded-2xl p-6 border border-primary-100">
         <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center text-2xl mb-4">🚗</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Moderní vozidla</h3>
-        <p class="text-gray-500 text-sm leading-relaxed">Výuka na dobře udržovaných, bezpečných vozech s dvojitými pedály.</p>
+        <p class="text-gray-500 text-sm leading-relaxed">Výuka na dobře udržovaných, bezpečných vozech. Vlastní nákladní IVECO a souprava.</p>
       </div>
-
       <div class="reveal reveal-delay-4 bg-primary-50 rounded-2xl p-6 border border-primary-100">
         <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center text-2xl mb-4">✅</div>
         <h3 class="font-bold text-gray-900 text-lg mb-2">Vysoká úspěšnost</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Většina žáků složí zkoušky napoprvé. A pokud ne — opakování zdarma.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FLEET SECTION
+═══════════════════════════════════════════ -->
+<section id="vozovy-park" class="py-20 md:py-28 section-alt">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-2">Výuka na kvalitních vozidlech</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Náš vozový park</h2>
+      <p class="text-gray-500 mt-3 max-w-lg mx-auto">Vlastní vozidla pro každou skupinu — vždy v bezpečném a udržovaném stavu.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Osobní vozidla -->
+      <div class="reveal reveal-delay-1 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <div class="fleet-photo">
+          <span class="text-3xl">🚗</span>
+          <span>Foto bude doplněno</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-xl mb-2">Osobní vozidla</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Moderní vozy s dvojitými pedály pro skupiny B a BE. Klimatizace, kamera, pohodlí pro žáka i instruktora.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">Sk. B</span>
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">Sk. BE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motocykly -->
+      <div class="reveal reveal-delay-2 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <div class="fleet-photo">
+          <span class="text-3xl">🏍️</span>
+          <span>Foto bude doplněno</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-xl mb-2">Motocykly</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Motocykly pro všechny skupiny — AM, A1, A2 až A. Vhodné stroje pro každou úroveň a věk žáka.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">AM</span>
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">A1</span>
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">A2</span>
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">A</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nákladní soupravy -->
+      <div class="reveal reveal-delay-3 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <div class="fleet-photo">
+          <span class="text-3xl">🚛</span>
+          <span>Foto bude doplněno</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-gray-900 text-xl mb-2">Nákladní soupravy</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Vlastní nákladní vůz IVECO a souprava s návěsem pro skupiny C a CE. Profesionální podmínky pro výuku.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">Sk. C</span>
+            <span class="text-xs bg-primary-50 text-primary-700 font-semibold px-2.5 py-1 rounded-full">Sk. CE</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -485,16 +632,38 @@
 
 
 <!-- ═══════════════════════════════════════════
-     SOCIAL PROOF / TESTIMONIAL
+     TESTIMONIALS — placeholder
 ═══════════════════════════════════════════ -->
-<section class="py-16 bg-primary-600">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
-    <p class="text-white/60 text-sm font-semibold tracking-widest uppercase mb-6">Co říkají naši žáci</p>
-    <blockquote class="text-white text-xl md:text-2xl font-medium leading-relaxed mb-6 italic">
-      „Bál jsem se, že to nedám. Pan Kunst byl neskutečně trpělivý, vždy v klidu vysvětlil každou chybu.
-      Zkoušku jsem dal napoprvé a řídím už rok bez nehody."
-    </blockquote>
-    <p class="text-white/70 font-semibold">— Martin K., žák skupiny B, Nýřany</p>
+<section class="py-20 md:py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-10 reveal">
+      <p class="text-accent font-semibold text-sm tracking-widest uppercase mb-2">Reference</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Co říkají absolventi</h2>
+    </div>
+
+    <!-- Placeholder card -->
+    <div class="reveal reveal-delay-1 max-w-xl mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-2xl p-8 text-center mb-8">
+      <div class="text-2xl mb-3">⭐⭐⭐⭐⭐</div>
+      <p class="text-gray-400 text-sm italic">Reference bude doplněna</p>
+    </div>
+
+    <!-- Google Maps review badge -->
+    <div class="text-center reveal reveal-delay-2">
+      <p class="text-gray-500 text-sm mb-4">Přečtěte si recenze nebo nám zanechte hodnocení na Google:</p>
+      <a href="https://www.google.com/maps/search/Auto%C5%A1kola+Zden%C4%9Bk+Kunst+N%C3%BD%C5%99any"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-6 py-3 shadow-sm hover:shadow-md transition-shadow font-semibold text-gray-700 text-sm">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Hodnotit na Google Maps
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -513,43 +682,44 @@
 
     <div class="grid lg:grid-cols-2 gap-10 items-start">
 
-      <!-- Contact info + map placeholder -->
-      <div class="reveal reveal-delay-1 space-y-6">
+      <!-- Contact info + map -->
+      <div class="reveal reveal-delay-1 space-y-4">
 
-        <!-- Info cards -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+        <!-- Phone -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
           <div class="w-10 h-10 bg-primary-50 text-primary-600 rounded-lg flex items-center justify-center text-xl shrink-0">📞</div>
           <div>
-            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">Telefon</p>
-            <a href="tel:+420XXXXXXXXX" class="text-lg font-bold text-gray-900 hover:text-primary-600 transition-colors">+420 XXX XXX XXX</a>
-            <p class="text-gray-400 text-xs mt-0.5">Po–Pá 8:00–18:00</p>
+            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">Telefon</p>
+            <a href="tel:+420602943355" class="text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors">+420 602 943 355</a>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
-          <div class="w-10 h-10 bg-primary-50 text-primary-600 rounded-lg flex items-center justify-center text-xl shrink-0">✉️</div>
-          <div>
-            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">E-mail</p>
-            <a href="mailto:autoskola@kunst.cz" class="text-lg font-bold text-gray-900 hover:text-primary-600 transition-colors">autoskola@kunst.cz</a>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-start gap-4">
+        <!-- Address -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
           <div class="w-10 h-10 bg-primary-50 text-primary-600 rounded-lg flex items-center justify-center text-xl shrink-0">📍</div>
           <div>
-            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">Adresa</p>
-            <p class="text-lg font-bold text-gray-900">Revoluční 1146</p>
-            <p class="text-gray-500">330 23 Nýřany</p>
+            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">Adresa</p>
+            <p class="font-bold text-gray-900">Revoluční 1146, 330 23 Nýřany</p>
           </div>
         </div>
 
-        <!-- Map placeholder -->
-        <div class="bg-gray-200 rounded-2xl overflow-hidden h-48 flex items-center justify-center text-gray-400 text-sm font-medium border border-gray-200">
-          <div class="text-center">
-            <div class="text-3xl mb-2">🗺️</div>
-            <p>Vložte zde Google Maps embed</p>
-            <p class="text-xs text-gray-400 mt-1">Revoluční 1146, Nýřany</p>
+        <!-- Hours -->
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-4">
+          <div class="w-10 h-10 bg-primary-50 text-primary-600 rounded-lg flex items-center justify-center text-xl shrink-0">🕐</div>
+          <div>
+            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">Provozní doba</p>
+            <p class="font-bold text-gray-900">Po–Pá 8:00–17:00</p>
+            <p class="text-xs text-gray-400 mt-0.5">Individuální domluva možná</p>
           </div>
+        </div>
+
+        <!-- Google Maps embed -->
+        <div class="map-iframe">
+          <iframe
+            src="https://maps.google.com/maps?q=Revolu%C4%8Dn%C3%AD+1146%2C+N%C3%BD%C5%99any+330+23&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
+            title="Autoškola Kunst — mapa">
+          </iframe>
         </div>
       </div>
 
@@ -578,9 +748,26 @@
             <select id="skupina" name="skupina"
                     class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 transition-all bg-white">
               <option value="">— Vyberte skupinu —</option>
-              <option value="B">Skupina B — osobní auto</option>
-              <option value="C">Skupina C — nákladní auto</option>
-              <option value="CE">Skupina CE — souprava s přívěsem</option>
+              <optgroup label="Motocykly">
+                <option value="AM">AM — moped / lehký motocykl</option>
+                <option value="A1">A1 — motocykl do 125 ccm</option>
+                <option value="A2">A2 — motocykl do 35 kW</option>
+                <option value="A">A — motocykl bez omezení</option>
+              </optgroup>
+              <optgroup label="Osobní vozidla">
+                <option value="B">B — osobní automobil</option>
+                <option value="BE">BE — auto s přívěsem</option>
+              </optgroup>
+              <optgroup label="Nákladní vozidla">
+                <option value="C">C — nákladní automobil</option>
+                <option value="CE">CE — souprava s návěsem</option>
+                <option value="D">D — autobus</option>
+              </optgroup>
+              <optgroup label="Profesní průkazy">
+                <option value="profesni-vstupni">Profesní průkaz — vstupní školení</option>
+                <option value="profesni-periodicke">Profesní průkaz — pravidelné školení</option>
+                <option value="profesni-ref">Školení řidičů referentských vozidel</option>
+              </optgroup>
               <option value="jine">Jiné / nevím</option>
             </select>
           </div>
@@ -588,7 +775,7 @@
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1.5" for="message">Zpráva</label>
             <textarea id="message" name="message" rows="4"
-                      placeholder="Napiště nám cokoliv — otázky, termíny, specifické požadavky…"
+                      placeholder="Napište nám cokoliv — otázky, termíny, specifické požadavky…"
                       class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 transition-all placeholder-gray-300 resize-none"></textarea>
           </div>
 
@@ -600,7 +787,6 @@
           <p class="text-xs text-gray-400 text-center">Vaše údaje jsou v bezpečí. Ozveme se do 24 hodin.</p>
         </form>
 
-        <!-- Thank-you message (hidden until submit) -->
         <div id="thank-you" class="hidden text-center py-10">
           <div class="text-5xl mb-4">🎉</div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Zpráva odeslána!</h3>
@@ -620,23 +806,20 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
 
-      <!-- Logo -->
       <div class="flex items-center gap-2">
         <span class="w-7 h-7 rounded-md bg-primary-600 flex items-center justify-center text-white font-bold text-xs">K</span>
         <span class="font-bold text-white">Autoškola Kunst</span>
       </div>
 
-      <!-- Links -->
       <nav class="flex flex-wrap gap-5 text-sm justify-center">
         <a href="#jak-to-funguje" class="hover:text-white transition-colors">Jak to funguje</a>
-        <a href="#sluzby"         class="hover:text-white transition-colors">Ceny</a>
-        <a href="#proc-my"        class="hover:text-white transition-colors">Proč my</a>
+        <a href="#sluzby"         class="hover:text-white transition-colors">Ceník</a>
+        <a href="#vozovy-park"    class="hover:text-white transition-colors">Vozový park</a>
         <a href="#kontakt"        class="hover:text-white transition-colors">Kontakt</a>
       </nav>
 
-      <!-- Copyright -->
       <p class="text-xs text-gray-600">
-        © 2025 Autoškola Zdeněk Kunst · Nýřany
+        © 2026 Autoškola Zdeněk Kunst · Nýřany
       </p>
     </div>
   </div>
@@ -650,9 +833,9 @@
      class="fixed bottom-0 inset-x-0 z-40 bg-white border-t border-gray-100 shadow-lg px-4 py-3 items-center justify-between gap-3">
   <div>
     <p class="text-xs text-gray-400 leading-none">Zavolat nám</p>
-    <a href="tel:+420XXXXXXXXX" class="text-gray-900 font-bold text-base leading-tight">+420 XXX XXX XXX</a>
+    <a href="tel:+420602943355" class="text-gray-900 font-bold text-base leading-tight">+420 602 943 355</a>
   </div>
-  <a href="tel:+420XXXXXXXXX"
+  <a href="tel:+420602943355"
      class="flex-shrink-0 bg-primary-600 text-white font-bold px-5 py-3 rounded-xl text-sm hover:bg-primary-700 transition-colors">
     📞 Zavolat
   </a>
@@ -663,25 +846,24 @@
      JAVASCRIPT
 ═══════════════════════════════════════════ -->
 <script>
-  // ── Sticky header glass effect ──────────────────
+  // Sticky header
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // ── Mobile menu toggle ──────────────────────────
-  const menuBtn   = document.getElementById('menu-btn');
+  // Mobile menu
+  const menuBtn    = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const iconOpen  = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
+  const iconOpen   = document.getElementById('icon-open');
+  const iconClose  = document.getElementById('icon-close');
 
   menuBtn.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('hidden');
-    iconOpen.classList.toggle('hidden',  !open);
-    iconClose.classList.toggle('hidden', open);
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden',  !isHidden);
+    iconClose.classList.toggle('hidden', isHidden);
   });
 
-  // Close menu on nav link click
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
@@ -690,50 +872,39 @@
     });
   });
 
-  // ── Intersection Observer (reveal on scroll) ────
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer  = new IntersectionObserver((entries) => {
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
-  revealEls.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // ── Contact form → thank-you swap ──────────────
+  // Contact form → thank you
   const form     = document.getElementById('contact-form');
   const thankYou = document.getElementById('thank-you');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    // Basic validation
-    const name  = form.querySelector('#name');
-    const phone = form.querySelector('#phone');
+    const name  = document.getElementById('name');
+    const phone = document.getElementById('phone');
 
     if (!name.value.trim()) {
-      name.focus();
-      name.style.borderColor = '#e85d04';
-      return;
+      name.focus(); name.style.borderColor = '#e85d04'; return;
     }
     if (!phone.value.trim()) {
-      phone.focus();
-      phone.style.borderColor = '#e85d04';
-      return;
+      phone.focus(); phone.style.borderColor = '#e85d04'; return;
     }
 
-    // Simulate submission
     form.classList.add('hidden');
     thankYou.classList.remove('hidden');
-
-    // Scroll to thank you
     thankYou.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
-  // Reset border on input
   ['name', 'phone'].forEach(id => {
     document.getElementById(id).addEventListener('input', function() {
       this.style.borderColor = '';
